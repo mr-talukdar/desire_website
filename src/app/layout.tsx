@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Desire Creatives is a high-end digital agency. We build sophisticated machines, not templates.",
 };
 
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SmoothScroll } from "@/components/animations/SmoothScroll";
 
 export default function RootLayout({
