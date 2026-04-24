@@ -61,7 +61,7 @@ const FALLBACK_POSTS: IBlogPost[] = [
 ]
 
 export default async function BlogListingPage() {
-  let posts = await sanityFetch<IBlogPost[]>({
+  const posts = await sanityFetch<IBlogPost[]>({
     query: allBlogPostsQuery,
     tags: ['blogPost'],
   })
