@@ -16,8 +16,8 @@ export function Footer() {
     <footer className="border-t border-outline-variant/10 bg-surface-container-lowest">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-10">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          {/* Left — Brand */}
-          <div>
+          {/* Left - Brand */}
+          <div className="text-center md:text-left">
             <Link
               href="/"
               className="text-xs font-bold tracking-[0.2em] uppercase text-on-surface"
@@ -25,36 +25,42 @@ export function Footer() {
               DESIRE CREATIVES
             </Link>
             <p className="mt-1 text-[10px] tracking-widest uppercase text-on-surface-variant/50">
-              Engineering Digital Dominance
+              Creative Agency for Brands That Stand Out
             </p>
           </div>
 
-          {/* Center — Social */}
-          <div className="flex items-center gap-6">
-            {SOCIAL_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] font-semibold tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-on-surface transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+          {/* Right - Links (Social + Legal grouped) */}
+          <div className="flex flex-col items-center gap-4 md:flex-row md:gap-8">
+            {/* Social */}
+            <div className="flex items-center gap-6">
+              {SOCIAL_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-semibold tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-on-surface transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
 
-          {/* Right — Legal */}
-          <div className="flex items-center gap-6">
-            {FOOTER_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-[10px] font-semibold tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-on-surface transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {/* Divider on desktop */}
+            <span className="hidden md:inline text-on-surface-variant/20">|</span>
+
+            {/* Legal */}
+            <div className="flex items-center gap-6">
+              {FOOTER_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-[10px] font-semibold tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-on-surface transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 

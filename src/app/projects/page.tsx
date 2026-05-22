@@ -5,8 +5,8 @@ import { ProjectsGallery } from '@/components/sections/ProjectsGallery'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Projects | Desire Creatives',
-  description: 'Engineered results for the technical void. We build high-fidelity digital machines that dominate their markets.',
+  title: 'Creative Explorations | Desire Creatives',
+  description: 'A look at how we think, create, and approach brand-building - through concepts, experiments, and real executions.',
 }
 
 export const revalidate = 60
@@ -15,11 +15,11 @@ const FALLBACK_PROJECTS: IProject[] = [
   {
     _id: '1',
     _type: 'project',
-    slug: { current: 'aether-financial' },
-    title: 'Aether Financial',
-    tagline: 'Algorithmic Trading Platform Interface',
-    thumbnail: { asset: { url: '/images/project-dashboard.png' } },
-    categories: [{ _id: 'c1', _type: 'category', name: 'UI/UX', slug: { current: 'ui-ux' } }],
+    slug: { current: 'astro-sounds' },
+    title: 'Astro Sounds',
+    tagline: 'Visual identity and content direction for a music production studio',
+    thumbnail: { asset: { url: '/images/project-radio.png' } },
+    categories: [{ _id: 'c1', _type: 'category', name: 'Branding', slug: { current: 'branding' } }],
     publishedAt: '2026-04-10T10:00:00Z',
     overview: []
   },
@@ -28,32 +28,43 @@ const FALLBACK_PROJECTS: IProject[] = [
     _type: 'project',
     slug: { current: 'nexus-protocol' },
     title: 'Nexus Protocol',
-    tagline: 'Infrastructure Visual Identity',
+    tagline: 'Brand identity for a growing tech infrastructure company',
     thumbnail: { asset: { url: '/images/project-infrastructure.png' } },
-    categories: [{ _id: 'c2', _type: 'category', name: 'BRANDING', slug: { current: 'branding' } }],
+    categories: [{ _id: 'c2', _type: 'category', name: 'Branding', slug: { current: 'branding' } }],
     publishedAt: '2026-04-10T10:00:00Z',
     overview: []
   },
   {
     _id: '3',
     _type: 'project',
-    slug: { current: 'sentinel-zero' },
-    title: 'Sentinel Zero',
-    tagline: 'Threat Detection Dashboard',
+    slug: { current: 'darkline-suite' },
+    title: 'Darkline Suite',
+    tagline: 'Digital presence overhaul for a SaaS platform',
     thumbnail: { asset: { url: '/images/project-dashboard.png' } },
-    categories: [{ _id: 'c3', _type: 'category', name: 'SYSTEMS', slug: { current: 'systems' } }],
-    publishedAt: '2026-04-10T10:00:00Z',
+    categories: [{ _id: 'c3', _type: 'category', name: 'Web/App Development', slug: { current: 'web-app-development' } }],
+    publishedAt: '2026-03-15T10:00:00Z',
     overview: []
   },
   {
     _id: '4',
     _type: 'project',
-    slug: { current: 'quantum-metrics' },
-    title: 'Quantum Metrics',
-    tagline: 'Enterprise Analytics Suite',
-    thumbnail: { asset: { url: '/images/project-dashboard.png' } },
-    categories: [{ _id: 'c4', _type: 'category', name: 'DATA', slug: { current: 'data' } }],
-    publishedAt: '2026-04-10T10:00:00Z',
+    slug: { current: 'echo-studio' },
+    title: 'Echo Studio',
+    tagline: 'UI/UX design for a creative studio platform',
+    thumbnail: { asset: { url: '/images/project-radio.png' } },
+    categories: [{ _id: 'c4', _type: 'category', name: 'UI/UX', slug: { current: 'ui-ux' } }],
+    publishedAt: '2026-02-10T10:00:00Z',
+    overview: []
+  },
+  {
+    _id: '5',
+    _type: 'project',
+    slug: { current: 'zenith-industries' },
+    title: 'Zenith Industries',
+    tagline: 'Brand strategy and digital growth for an industrial services company',
+    thumbnail: { asset: { url: '/images/project-infrastructure.png' } },
+    categories: [{ _id: 'c5', _type: 'category', name: 'Branding', slug: { current: 'branding' } }],
+    publishedAt: '2026-01-05T10:00:00Z',
     overview: []
   },
 ]
@@ -74,10 +85,10 @@ export default async function ProjectsPage() {
         {/* Page Header */}
         <div className="mb-20 max-w-3xl">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-on-surface mb-6">
-            PROJECTS
+            CREATIVE EXPLORATIONS
           </h1>
           <p className="text-sm md:text-base text-on-surface-variant max-w-xl leading-relaxed">
-            Engineered results for the technical void. We build high-fidelity digital machines that dominate their markets.
+            A look at how we think, create, and approach brand-building - through concepts, experiments, and real executions.
           </p>
         </div>
 
@@ -87,18 +98,16 @@ export default async function ProjectsPage() {
         {/* Project Demo Section */}
         <div className="border-t border-outline-variant/20 pt-20 max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black uppercase text-on-surface mb-4 tracking-tight">PROJECT DEMO</h2>
-          <p className="text-sm text-on-surface-variant mb-12">Experience the precision of our engineered interfaces firsthand.</p>
+          <p className="text-sm text-on-surface-variant mb-12">See how we bring ideas to life - from concept to execution.</p>
           
-          <div className="relative aspect-video w-full bg-surface-container border border-outline-variant/20 rounded-sm flex items-center justify-center group overflow-hidden cursor-pointer">
-             {/* Fake code background or similar from design */}
-             <div className="absolute inset-0 opacity-20 font-mono text-[8px] text-left p-6 text-on-surface-variant overflow-hidden truncate">
-               {`const initProject = async (id: string) => { \n  const data = await fetchSystem(id);\n  renderDOM(data);\n  return { status: &quot;ACTIVE&quot; }; \n}\n\n// INITIALIZING SEQUENCE\ninitProject(&apos;nexus-protocol&apos;).then(sys => {\n  console.log(&apos;SYSTEM ONLINE&apos;);\n});`}
-             </div>
-             
-             {/* Play button */}
-             <div className="relative z-10 w-16 h-12 bg-primary-container rounded flex items-center justify-center shadow-[0_0_30px_rgba(0,112,243,0.4)] group-hover:scale-110 transition-transform duration-300">
-               <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
-             </div>
+          <div className="relative aspect-video w-full bg-surface-container border border-outline-variant/20 rounded-sm overflow-hidden shadow-lg">
+            <iframe
+              className="absolute inset-0 w-full h-full border-0"
+              src="https://www.youtube.com/embed/jUR2TMoIK0I"
+              title="Project Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
 

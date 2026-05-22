@@ -9,7 +9,7 @@ interface ProjectsGalleryProps {
   initialProjects: IProject[]
 }
 
-const CATEGORIES = ['ALL', 'DEVELOPMENT', 'DESIGN', 'BRANDING', 'SYSTEMS', 'DATA']
+const CATEGORIES = ['ALL', 'BRANDING', 'UI/UX', 'WEB/APP DEVELOPMENT', '3D ADVERTISING', 'SOCIAL MEDIA ASSET MANAGEMENT']
 
 export function ProjectsGallery({ initialProjects }: ProjectsGalleryProps) {
   const [searchQuery, setSearchQuery] = useState('')
@@ -66,7 +66,7 @@ export function ProjectsGallery({ initialProjects }: ProjectsGalleryProps) {
           filteredProjects.map((project) => (
             <Link 
               key={project._id} 
-              href={`/projects/${project.slug.current}`}
+              href={`/projects/${typeof project.slug === 'string' ? project.slug : project.slug.current}`}
               className="group block"
             >
               <div className="flex flex-col gap-4">

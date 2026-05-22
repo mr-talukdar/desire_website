@@ -1,7 +1,7 @@
 import {defineField, defineType, defineArrayMember} from 'sanity'
 
 /**
- * Page — Modular page builder.
+ * Page - Modular page builder.
  * The `sections` field is a polymorphic array that maps directly to the
  * SectionRenderer component on the frontend.
  */

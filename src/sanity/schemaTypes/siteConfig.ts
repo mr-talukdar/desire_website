@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
 /**
- * SiteConfig — Singleton document for global site settings.
+ * SiteConfig - Singleton document for global site settings.
  * Consumed by Navbar and Footer layout components.
  */
 export const siteConfig = defineType({

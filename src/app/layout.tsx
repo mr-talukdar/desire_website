@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Desire Creatives | Engineering Digital Dominance",
-  description: "Desire Creatives is a high-end digital agency. We build sophisticated machines, not templates.",
+  title: "Desire Creatives | Creative Agency for Brands That Stand Out",
+  description: "We're a creative agency that helps businesses stand out, stay relevant, and turn attention into real opportunities.",
 };
 
 import { Analytics } from "@vercel/analytics/next";

@@ -11,7 +11,7 @@ const fadeUp = {
 
 export default function AgencyPage() {
   return (
-    <div className="min-h-screen bg-surface-container-lowest pt-20">
+    <div className="min-h-screen bg-surface-container-lowest">
       {/* Hero Section */}
       <section className="py-20 md:py-32 border-b border-outline-variant/10">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
@@ -20,66 +20,69 @@ export default function AgencyPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl"
           >
-            <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-primary mb-6">EST. 2024 / THE ARCHITECTS</p>
+            <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-primary mb-6">ABOUT US</p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-on-surface mb-8">
-              PRECISION<br />OVER PATTERNS.
+              BUILT FOR BRANDS<br />THAT REFUSE<br />TO BLEND IN.
             </h1>
-            <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl">
-              We are a high-performance digital agency engineered to build the next generation of infrastructure, decentralized systems, and technical interfaces.
+            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-2xl">
+              We started with a simple observation - most brands don&apos;t lack effort, they lack clarity. In a world full of noise, being average is easy. Being remembered takes intent. That&apos;s where we come in.
+            </p>
+            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-2xl mt-4">
+              We&apos;re a creative agency focused on building brands that stand out, stay consistent, and actually connect with people. Not just through design or content, but through clear thinking and purposeful execution.
+            </p>
+            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-2xl mt-4">
+              As a growing team, we bring fresh perspective, close collaboration, and a genuine investment in the work we do. No inflated promises, no unnecessary complexity - just thoughtful ideas, well executed.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Manifesto / Philosophy Section */}
+      {/* How We Think Section */}
       <section className="py-20 md:py-32 bg-surface-container">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <motion.div {...fadeUp}>
-              <h2 className="text-3xl font-black uppercase tracking-tight text-on-surface mb-6">THE TECHNICAL VOID</h2>
+              <h2 className="text-3xl font-black uppercase tracking-tight text-on-surface mb-6">HOW WE THINK</h2>
               <p className="text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
-                Most agencies build for the surface. We build for the infrastructure. In an era of infinite noise, we embrace &quot;The Technical Void&quot;—a methodology focused on stripping away structural noise to reveal high-frequency utility.
+                We believe good work comes from understanding first, not rushing to execute. Every brand is different, so every approach should be too.
               </p>
-              <div className="flex flex-col gap-4 text-sm font-mono text-on-surface-variant/70">
-                <div className="flex items-center gap-4">
-                  <span className="text-primary">01</span>
-                  <span>ZERO-LATENCY INTERACTION</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-primary">02</span>
-                  <span>GEOMETRIC TYPOGRAPHY</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-primary">03</span>
-                  <span>SYSTEMIC SCALABILITY</span>
-                </div>
-              </div>
+              <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                We focus on clarity over clutter, consistency over chaos, and ideas that actually make sense for your business. Because in the end, it&apos;s not about doing more - it&apos;s about doing what works.
+              </p>
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ delay: 0.2 }} className="bg-surface-container-high p-10 md:p-14 border border-outline-variant/10 rounded-sm">
-              <h3 className="text-xl font-bold uppercase tracking-tight text-on-surface mb-6 italic">&quot;A machine is not finished when there is nothing left to add, but when there is nothing left to take away.&quot;</h3>
+              <h3 className="text-xl font-bold uppercase tracking-tight text-on-surface mb-6 italic">&quot;A brand is no longer what we tell the consumer it is - it is what consumers tell each other it is.&quot;</h3>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                This is the core of Desire Creatives. We don&apos;t just &quot;design websites&quot;—we engineer digital machines that dominate their markets through technical superiority and visual absolute.
+                - Scott Cook
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values Grid */}
+      {/* USP / Values Grid */}
       <section className="py-20 md:py-32">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/10">
             {[
-              { title: 'AUTONOMY', desc: 'Every engineer at Desire is a domain expert, operating with absolute autonomy to solve complex architecture challenges.' },
-              { title: 'RIGOR', desc: 'We maintain a strict operational framework. Code is audited, pixels are measured, and performance is non-negotiable.' },
-              { title: 'LEGACY', desc: 'We build systems that endure. Our work is designed to scale across generations of technologies.' }
+              { 
+                title: 'STRATEGY FIRST', 
+                desc: 'Good design isn\'t decoration - it\'s direction. Every idea, visual, and campaign starts with a clear understanding of the brand, the audience, and the objective it needs to serve.' 
+              },
+              { 
+                title: 'CONSISTENCY BUILDS', 
+                desc: 'Recognition doesn\'t happen by chance - it\'s built over time. We maintain clarity in visuals, tone, and messaging so your brand feels familiar, trustworthy, and easy to remember.' 
+              },
+              { 
+                title: 'CREATIVITY WITH PURPOSE', 
+                desc: 'Being different is easy. Being effective is harder. We focus on ideas that not only stand out, but also make sense - aligned with your goals and built to deliver real impact.' 
+              }
             ].map((value) => (
               <motion.div 
                 key={value.title}
                 {...fadeUp}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                transition={{ delay: (value as any).delay || 0.1 }}
+                transition={{ delay: 0.1 }}
                 className="p-10 bg-surface-container-lowest"
               >
                 <h3 className="text-xs font-black tracking-[0.2em] text-primary mb-4">{value.title}</h3>
@@ -93,12 +96,13 @@ export default function AgencyPage() {
       {/* Call to Action */}
       <section className="py-20 md:py-40 bg-surface-container text-center">
         <motion.div {...fadeUp} className="max-w-2xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-on-surface mb-10">ALIGNED WITH YOUR VISION?</h2>
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-on-surface mb-6">LET&apos;S BUILD SOMETHING<br />THAT PEOPLE REMEMBER.</h2>
+          <p className="text-base text-on-surface-variant mb-10 max-w-lg mx-auto">Tell us what you&apos;re working on - we&apos;ll help you shape it into something that actually stands out.</p>
           <Link 
             href="/contact"
             className="inline-flex items-center gap-3 px-10 py-5 text-[11px] font-bold tracking-[0.2em] uppercase bg-primary-container text-white rounded-sm hover:-translate-y-1 transition-all duration-300 shadow-[0_0_30px_rgba(0,112,243,0.3)]"
           >
-            INITIATE SEQUENCE →
+            START A PROJECT →
           </Link>
         </motion.div>
       </section>

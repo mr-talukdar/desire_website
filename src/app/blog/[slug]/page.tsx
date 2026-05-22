@@ -17,10 +17,11 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     tags: ['blogPost', `blogPost:${params.slug}`],
   })
 
-  if (!post && params.slug === 'architecture-of-infinite-scale') {
+  const fallback = FALLBACK_POSTS[params.slug]
+  if (!post && fallback) {
     return {
-      title: 'The Architecture of Infinite Scale | Desire Creatives',
-      description: 'Deconstructing the methodologies required to build systems that scale infinitely.',
+      title: `${fallback.title} | Desire Creatives`,
+      description: fallback.excerpt,
     }
   }
 
@@ -47,16 +48,40 @@ export async function generateStaticParams() {
 }
 
 // Fallback data if Sanity is empty, specifically matching the Stitch design
-const FALLBACK_POST: IBlogPost = {
-  _id: 'fallback-post',
-  _type: 'blogPost',
-  title: 'The Architecture of Infinite Scale',
-  slug: { current: 'architecture-of-infinite-scale' },
-  excerpt: 'Deconstructing the methodologies required to build systems that scale infinitely.',
-  publishedAt: '2026-04-10T10:00:00Z',
-  readingTime: 8,
-  coverImage: { asset: { url: '/images/insight-scale.png' } },
-  content: [], // We'll hardcode the design content in the component for the fallback
+const FALLBACK_POSTS: Record<string, IBlogPost> = {
+  'architecture-of-infinite-scale': {
+    _id: 'fallback-post-1',
+    _type: 'blogPost',
+    title: 'The Architecture of Infinite Scale',
+    slug: { current: 'architecture-of-infinite-scale' },
+    excerpt: 'Deconstructing the methodologies required to build systems that scale infinitely.',
+    publishedAt: '2026-04-10T10:00:00Z',
+    readingTime: 8,
+    coverImage: { asset: { url: '/images/insight-scale.png' } },
+    content: [], // Hardcoded in component
+  },
+  'typography-as-geometry': {
+    _id: 'fallback-post-2',
+    _type: 'blogPost',
+    title: 'Typography as Geometry',
+    slug: { current: 'typography-as-geometry' },
+    excerpt: 'Treating letterforms as structural elements rather than mere communication vehicles in modern brutalist interfaces.',
+    publishedAt: '2026-03-24T10:00:00Z',
+    readingTime: 5,
+    coverImage: { asset: { url: '/images/insight-typography.png' } },
+    content: [],
+  },
+  'zero-latency-state-management': {
+    _id: 'fallback-post-3',
+    _type: 'blogPost',
+    title: 'Zero-Latency State Management',
+    slug: { current: 'zero-latency-state-management' },
+    excerpt: 'A deep dive into optimistic UI patterns and local-first data layers for instantaneous user feedback.',
+    publishedAt: '2026-03-12T10:00:00Z',
+    readingTime: 12,
+    coverImage: { asset: { url: '/images/insight-dashboard.png' } },
+    content: [],
+  }
 }
 
 export default async function BlogPostPage(props: { params: Promise<{ slug: string }> }) {
@@ -69,8 +94,9 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
   })
 
   if (!post) {
-    if (params.slug === 'architecture-of-infinite-scale') {
-      post = FALLBACK_POST
+    const fallback = FALLBACK_POSTS[params.slug]
+    if (fallback) {
+      post = fallback
     } else {
       notFound()
     }
@@ -114,7 +140,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
           ) : (
             <>
               <p className="text-lg md:text-xl text-on-surface leading-relaxed mb-12 font-medium">
-                In the modern web, building for the present is a guarantee of obsolescence. True engineering focuses on the void—the empty space where future demand will inevitably arrive. Here we deconstruct the methodologies required to build systems that scale infinitely without structural collapse.
+                In the modern web, building for the present is a guarantee of obsolescence. True engineering focuses on the void - the empty space where future demand will inevitably arrive. Here we deconstruct the methodologies required to build systems that scale infinitely without structural collapse.
               </p>
 
               <h2>1. Deconstructing the Monolith</h2>

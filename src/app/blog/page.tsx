@@ -7,7 +7,7 @@ import type { IBlogPost } from '@/types'
 
 export const metadata: Metadata = {
   title: 'Insights | Desire Creatives',
-  description: 'Deep dives into systems architecture, design theory, and the technical void.',
+  description: 'Thoughts on branding, content, and creativity - based on what actually works, not what sounds good in theory.',
 }
 
 export const revalidate = 60
@@ -76,10 +76,10 @@ export default async function BlogListingPage() {
         {/* Page Header */}
         <div className="mb-24">
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-[0.92] text-on-surface mb-6">
-            ENGINEERING<br />THE EXCEPTION.
+            IDEAS,<br />NOT NOISE.
           </h1>
           <p className="text-sm md:text-base text-on-surface-variant max-w-xl leading-relaxed">
-            Deep dives into systems architecture, design theory, and the technical void. We document our process of building digital dominance.
+            Thoughts on branding, content, and creativity - based on what actually works, not what sounds good in theory.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default async function BlogListingPage() {
         <div className="flex flex-col gap-12">
           {displayPosts.map((post) => (
             <article key={post._id} className="group border-b border-outline-variant/10 pb-12 last:border-0">
-              <Link href={`/blog/${post.slug.current}`} className="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-8 items-start">
+              <Link href={`/blog/${typeof post.slug === 'string' ? post.slug : post.slug.current}`} className="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-8 items-start">
                 <div>
                   <div className="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface-variant/50 mb-3">
                     <time dateTime={post.publishedAt}>
